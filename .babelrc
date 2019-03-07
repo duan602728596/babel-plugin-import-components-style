@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["node 9"]
+        },
+        "debug": true,
+        "modules": "commonjs",
+        "useBuiltIns": false
+      }
+    ]
+  ]
+}

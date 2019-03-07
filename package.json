@@ -1,0 +1,50 @@
+{
+  "name": "babel-plugin-import-components-style",
+  "version": "0.0.1",
+  "description": "组件css样式加载插件。",
+  "main": "lib/cjs.js",
+  "author": {
+    "name": "段昊辰",
+    "email": "duanhaochen@126.com",
+    "url": "https://github.com/duan602728596"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean:lib && babel src --out-dir lib",
+    "clean:lib": "rimraf lib",
+    "test": "mocha ./tests/test.js --timeout 180000",
+    "eslint": "eslint ./ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:duan602728596/babel-plugin-import-components-style.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.15.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "mocha": "^6.0.2",
+    "rimraf": "^2.6.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+linters:
+  packages/**/*.{js,jsx}: eslint
+ignore:
+  - node_modules
+  - lib

@@ -1,0 +1,26 @@
+# node
+node_modules
+npm-debug.log
+package-lock.json
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# webstorm
+.idea
+
+# packages
+src
+tests
+
+# ignore
+.npmignore
+.gitignore
+.eslintignore
+
+# config
+.babelrc
+.editorconfig
+.eslintrc.yml
+.lintstagedrc.yml
