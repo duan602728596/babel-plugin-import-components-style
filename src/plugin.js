@@ -40,7 +40,16 @@ export default function(types) {
       }
 
       // 插入模块
-      const stringLiteral = types.stringLiteral(`${ source.value }/${ componentValue }`);
+      let stringLiteralValue = componentValue;
+
+      // 约定以~开头的路径，不添加moduleName
+      if (stringLiteralValue[0] !== '~') {
+        stringLiteralValue = `${ value }/${ componentValue }`;
+      } else {
+        stringLiteralValue = stringLiteralValue.substr(1);
+      }
+
+      const stringLiteral = types.stringLiteral(stringLiteralValue);
       const importDeclaration = types.importDeclaration([], stringLiteral);
 
       path.insertAfter([importDeclaration]);
