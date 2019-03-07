@@ -59,7 +59,7 @@ import "module4/style/component4.css";`;
 
 describe('babel-plugin-import-component-style in babel 6', function() {
   // 预期代码build结果
-  // babel7是单引号
+  // babel6是单引号
   const build = `import component1 from 'module1';
 import 'module1/style/component1.css';
 import { component21, component22 } from 'module2';
