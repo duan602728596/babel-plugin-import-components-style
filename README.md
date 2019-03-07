@@ -14,7 +14,8 @@ You need to configure the babel as follows:
       {
         "components": {
           "moduleName1": "style/moduleName1.css",
-          "moduleName2": "style/moduleName2.css" 
+          "moduleName2": "style/moduleName2.css",
+          "moduleName3/dist": "~moduleName3/style/moduleName3.css",
         }
       }
     ]
@@ -25,20 +26,22 @@ You need to configure the babel as follows:
 The plugin will automatically perform the following conversion:
 
 ```javascript
-import moduleName1 from 'moduleName1';
+import module1 from 'moduleName1';
 import { func1, func2 } from 'moduleName2';
+import module3 from 'moduleName3/dist';
 ```
 
 Convert into
-
 ```javascript
-import moduleName1 from 'moduleName1';
+import module1 from 'moduleName1';
 import 'moduleName1/style/moduleName1.css';
 import { func1, func2 } from 'moduleName2';
 import 'moduleName2/style/moduleName2.css';
+import module3 from 'moduleName3/dist';
+import 'moduleName3/style/moduleName3.css';
 ```
 ## options
 
 * components<object>:
   * key: Module name.
-  * value<string>: The address of the style file such as css, less, sass, scss, styl, etc. in the module (no need to write the module name, the plugin will automatically add it for you)。
+  * value<string>: The address of the style file such as css, less, sass, scss, styl, etc. in the module (no need to write the module name, the plugin will automatically add it for you. If your path starts with ` ~ `, the plugin won't add the module name for you.).
