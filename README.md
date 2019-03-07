@@ -1,5 +1,7 @@
 # babel-plugin-import-components-style
 
+[中文文档](README-zhCN.md)   
+
 Some components js and css need to be separated, using this plugin allows you to automatically load css.
 
 ## Instructions
