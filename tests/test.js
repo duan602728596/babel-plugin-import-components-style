@@ -70,7 +70,6 @@ import component4 from 'module4/dist';
 import 'module4/style/component4.css';`;
 
   it('should babel 6 build return string', async function() {
-
     const code = await babelTransform(babel6);
 
     expect(code).to.be.string;
