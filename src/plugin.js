@@ -1,4 +1,22 @@
-import { isObject, isString } from './type';
+import * as _ from 'lodash';
+
+/**
+ * 检查类型是否为字符串
+ */
+function check(componentValue) {
+  if (!_.isArray(componentValue)) return false;
+
+  let result = true;
+
+  for (const item of componentValue) {
+    if (!_.isString(item)) {
+      result = false;
+      break;
+    }
+  }
+
+  return result;
+}
 
 export default function(types) {
   return {
@@ -22,7 +40,7 @@ export default function(types) {
       }
 
       // components配置项必须是object类型
-      if (!isObject(components)) {
+      if (!_.isPlainObject(components)) {
         console.warn('The type of components configuration must be object type.');
 
         return;
@@ -33,26 +51,32 @@ export default function(types) {
 
       if (!componentValue) return;
 
-      if (!isString(componentValue)) {
-        console.warn('The key value in components must be string type.');
+      if (!_.isString(componentValue) || !_.isArray(componentValue) || !check(componentValue)) {
+        console.warn('The key value in components must be string type or Array<string> type.');
 
         return;
       }
 
-      // 插入模块
-      let stringLiteralValue = componentValue;
+      const importValue = _.isArray(componentValue) ? componentValue : [componentValue];
+      const pathInsertAfter = [];
 
-      // 约定以~开头的路径，不添加moduleName
-      if (stringLiteralValue[0] !== '~') {
-        stringLiteralValue = `${ value }/${ componentValue }`;
-      } else {
-        stringLiteralValue = stringLiteralValue.substr(1);
-      }
+      importValue.forEach((item, index, array) => {
+        let stringLiteralValue = item;
 
-      const stringLiteral = types.stringLiteral(stringLiteralValue);
-      const importDeclaration = types.importDeclaration([], stringLiteral);
+        // 约定以~开头的路径，不添加moduleName
+        if (stringLiteralValue[0] !== '~') {
+          stringLiteralValue = `${ value }/${ componentValue }`;
+        } else {
+          stringLiteralValue = stringLiteralValue.substr(1);
+        }
 
-      path.insertAfter([importDeclaration]);
+        const stringLiteral = types.stringLiteral(stringLiteralValue);
+        const importDeclaration = types.importDeclaration([], stringLiteral);
+
+        pathInsertAfter.push(importDeclaration);
+      });
+
+      path.insertAfter(pathInsertAfter);
     }
   };
 }
