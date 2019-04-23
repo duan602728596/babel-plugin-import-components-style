@@ -51,21 +51,21 @@ export default function(types) {
 
       if (!componentValue) return;
 
-      if (!_.isString(componentValue) || !_.isArray(componentValue) || !check(componentValue)) {
+      if (!(_.isString(componentValue) || _.isArray(componentValue) || check(componentValue))) {
         console.warn('The key value in components must be string type or Array<string> type.');
 
         return;
       }
 
       const importValue = _.isArray(componentValue) ? componentValue : [componentValue];
-      const pathInsertAfter = [];
 
-      importValue.forEach((item, index, array) => {
+      for (let i = importValue.length - 1; i >= 0; i--) {
+        const item = importValue[i];
         let stringLiteralValue = item;
 
         // 约定以~开头的路径，不添加moduleName
         if (stringLiteralValue[0] !== '~') {
-          stringLiteralValue = `${ value }/${ componentValue }`;
+          stringLiteralValue = `${ value }/${ item }`;
         } else {
           stringLiteralValue = stringLiteralValue.substr(1);
         }
@@ -73,10 +73,8 @@ export default function(types) {
         const stringLiteral = types.stringLiteral(stringLiteralValue);
         const importDeclaration = types.importDeclaration([], stringLiteral);
 
-        pathInsertAfter.push(importDeclaration);
-      });
-
-      path.insertAfter(pathInsertAfter);
+        path.insertAfter([importDeclaration]);
+      }
     }
   };
 }

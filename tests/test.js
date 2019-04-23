@@ -16,7 +16,11 @@ const options = {
           module1: 'style/component1.css',
           module2: 'style/component2.css',
           module3: 'style/component3.css',
-          'module4/dist': '~module4/style/component4.css'
+          'module4/dist': '~module4/style/component4.css',
+          module5: [
+            'style/component5.css',
+            '~module6/style/component6.css'
+          ]
         }
       }
     ]
@@ -47,7 +51,10 @@ import "module2/style/component2.css";
 import 'module3';
 import "module3/style/component3.css";
 import component4 from 'module4/dist';
-import "module4/style/component4.css";`;
+import "module4/style/component4.css";
+import component5 from 'module5';
+import "module5/style/component5.css";
+import "module6/style/component6.css";`;
 
   it('should babel 7 build return string', async function() {
     const code = await babelTransform(babel7);
@@ -67,10 +74,12 @@ import 'module2/style/component2.css';
 import 'module3';
 import 'module3/style/component3.css';
 import component4 from 'module4/dist';
-import 'module4/style/component4.css';`;
+import 'module4/style/component4.css';
+import component5 from 'module5';
+import 'module5/style/component5.css';
+import 'module6/style/component6.css';`;
 
   it('should babel 6 build return string', async function() {
-
     const code = await babelTransform(babel6);
 
     expect(code).to.be.string;
