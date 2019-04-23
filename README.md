@@ -1,6 +1,6 @@
 # babel-plugin-import-components-style
 
-[中文文档](README-zhCN.md)   
+[中文文档](README-zhCN.md)
 
 Some components js and css need to be separated, using this plugin allows you to automatically load css.
 
@@ -45,5 +45,5 @@ import 'moduleName3/style/moduleName3.css';
 ## options
 
 * components<object>:
-  * key: Module name.
-  * value<string>: The address of the style file such as css, less, sass, scss, styl, etc. in the module (no need to write the module name, the plugin will automatically add it for you. If your path starts with ` ~ `, the plugin won't add the module name for you.).
+  * `key: string`: Module name.
+  * `value: string | Array<string>`: The address of the style file such as css, less, sass, scss, styl, etc. in the module (no need to write the module name, the plugin will automatically add it for you. If your path starts with ` ~ `, the plugin won't add the module name for you.).

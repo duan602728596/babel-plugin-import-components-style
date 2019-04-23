@@ -45,5 +45,5 @@ import 'moduleName3/style/moduleName3.css';
 ## 配置
 
 * components<object>：
-  * key：模块名称。
-  * value<string>：模块内css、less、sass、scss、styl等样式文件的地址（不需要写模块名，插件会自动帮你添加。如果你的路径以 ` ~ `开头，插件则不会帮你添加模块名）。 
+  * `key: string`：模块名称。
+  * `value: string | Array<string>`：模块内css、less、sass、scss、styl等样式文件的地址（不需要写模块名，插件会自动帮你添加。如果你的路径以 ` ~ `开头，插件则不会帮你添加模块名）。
