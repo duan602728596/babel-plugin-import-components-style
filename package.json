@@ -21,11 +21,13 @@
     "url": "git@github.com:duan602728596/babel-plugin-import-components-style.git"
   },
   "dependencies": {
+    "@babel/runtime": "^7.4.3",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
