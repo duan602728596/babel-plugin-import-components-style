@@ -2,7 +2,7 @@
   "name": "babel-plugin-import-components-style",
   "version": "0.1.0",
   "description": "组件css样式加载插件。",
-  "main": "lib/cjs.js",
+  "main": "dist/index.js",
   "author": {
     "name": "段昊辰",
     "email": "duanhaochen@126.com",
