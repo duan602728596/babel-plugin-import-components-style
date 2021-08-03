@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "tsc --watch",
+    "start": "rimraf dist && tsc --watch",
     "build": "rimraf dist && tsc",
     "test": "mocha ./test/test.js --timeout 180000",
     "eslint": "eslint ./ --fix"
