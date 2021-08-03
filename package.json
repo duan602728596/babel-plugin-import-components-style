@@ -12,7 +12,7 @@
   "scripts": {
     "start": "rimraf dist && tsc --watch",
     "build": "rimraf dist && tsc",
-    "test": "mocha ./test/test.js --timeout 180000",
+    "test": "mocha ./test/test.mjs --timeout 180000",
     "eslint": "eslint ./ --fix"
   },
   "repository": {
