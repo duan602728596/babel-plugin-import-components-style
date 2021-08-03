@@ -10,8 +10,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean:lib && babel src --out-dir lib",
-    "clean:lib": "rimraf lib",
+    "start": "tsc --watch",
+    "build": "npm run clean",
+    "clean": "rimraf dist",
     "test": "mocha ./test/test.js --timeout 180000",
     "eslint": "eslint ./ --fix"
   },
@@ -23,6 +24,10 @@
     "@babel/core": "^7.14.8",
     "@babel/eslint-parser": "^7.14.9",
     "@sweet-milktea/babel-preset-sweet": "^3.1.1",
+    "@types/babel__core": "^7",
+    "@types/babel__generator": "^7",
+    "@types/babel__template": "^7",
+    "@types/babel__traverse": "^7",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
