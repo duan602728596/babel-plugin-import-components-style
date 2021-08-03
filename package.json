@@ -20,6 +20,7 @@
     "url": "git@github.com:duan602728596/babel-plugin-import-components-style.git"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.8",
     "@babel/eslint-parser": "^7.14.9",
     "@sweet-milktea/babel-preset-sweet": "^3.1.1",
     "@types/node": "^16",
