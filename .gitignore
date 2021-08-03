@@ -6,9 +6,14 @@ package-lock.json
 # yarn
 yarn.lock
 yarn-error.log
+.yarnrc
+.yarn/*
+!.yarn/releases
 
 # webstorm
 .idea
 
 # packages
 lib
+dist
+build

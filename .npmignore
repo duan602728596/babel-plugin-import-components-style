@@ -6,21 +6,24 @@ package-lock.json
 # yarn
 yarn.lock
 yarn-error.log
+.yarn/*
 
 # webstorm
 .idea
 
+.DS_Store
+
 # packages
 src
 tests
+test
 
-# ignore
-.npmignore
-.gitignore
-.eslintignore
-
-# config
-.babelrc
+.husky
 .editorconfig
-.eslintrc.yml
-.lintstagedrc.yml
+.eslintrc.cjs
+.eslintrc.js
+.gitignore
+.npmignore
+.npmrc
+.pnp.cjs
+.yarnrc.yml

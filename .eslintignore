@@ -1,5 +1,10 @@
 # node
 node_modules
 
+.yarn/*
+.pnp.cjs
+
 # build
 lib
+dist
+build

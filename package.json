@@ -12,46 +12,41 @@
   "scripts": {
     "build": "npm run clean:lib && babel src --out-dir lib",
     "clean:lib": "rimraf lib",
-    "test": "mocha ./tests/test.js --timeout 180000",
-    "eslint": "eslint ./ --fix",
-    "case-check": "case-check --dir=\"./src\""
+    "test": "mocha ./test/test.js --timeout 180000",
+    "eslint": "eslint ./ --fix"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:duan602728596/babel-plugin-import-components-style.git"
   },
-  "dependencies": {
-    "@babel/runtime": "^7.4.3",
-    "lodash": "^4.17.11"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/plugin-transform-runtime": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
-    "chai": "^4.2.0",
-    "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "^2.1.0",
-    "es-module-path-case-check": "^1.4.0",
-    "eslint": "^5.16.0",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.5",
-    "mocha": "^6.1.4",
-    "rimraf": "^2.6.3"
+    "@babel/eslint-parser": "^7.14.9",
+    "@sweet-milktea/babel-preset-sweet": "^3.1.1",
+    "@types/node": "^16",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "chai": "^4.3.4",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.32.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "mocha": "^9.0.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5"
   },
   "peerDependencies": {
-    "@babel/core": "^7.4.3"
+    "@babel/core": "^7.14.8"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,mjs,cjs}": "eslint"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
   }
 }
