@@ -20,6 +20,7 @@ test
 
 .husky
 .editorconfig
+.eslintignore
 .eslintrc.cjs
 .eslintrc.js
 .gitignore
@@ -27,3 +28,4 @@ test
 .npmrc
 .pnp.cjs
 .yarnrc.yml
+tsconfig.json
