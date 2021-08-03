@@ -15,7 +15,7 @@
         "components": {
           "moduleName1": "style/moduleName1.css",
           "moduleName2": "style/moduleName2.css",
-          "moduleName3/dist": "~moduleName3/style/moduleName3.css",
+          "moduleName3/dist": "~moduleName3/style/moduleName3.css"
         }
       }
     ]
