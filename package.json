@@ -11,8 +11,7 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc --watch",
-    "build": "npm run clean",
-    "clean": "rimraf dist",
+    "build": "rimraf dist && tsc",
     "test": "mocha ./test/test.js --timeout 180000",
     "eslint": "eslint ./ --fix"
   },
