@@ -98,13 +98,7 @@ module.exports = {
       files: ['*.js', '*.jsx', '*.mjs', '*.cjs'],
       parser: '@babel/eslint-parser',
       parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          presets: [[
-            '@sweet-milktea/babel-preset-sweet',
-            { env: { ecmascript: true } }
-          ]]
-        }
+        requireConfigFile: false
       }
     }
   ],
