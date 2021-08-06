@@ -7,6 +7,8 @@ package-lock.json
 yarn.lock
 yarn-error.log
 .yarn/*
+.pnp.cjs
+.yarnrc.yml
 
 # webstorm
 .idea
@@ -26,6 +28,4 @@ test
 .gitignore
 .npmignore
 .npmrc
-.pnp.cjs
-.yarnrc.yml
 tsconfig.json
