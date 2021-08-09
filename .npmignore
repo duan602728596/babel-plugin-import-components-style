@@ -26,6 +26,7 @@ test
 .eslintrc.cjs
 .eslintrc.js
 .gitignore
+.gitattributes
 .npmignore
 .npmrc
 tsconfig.json
