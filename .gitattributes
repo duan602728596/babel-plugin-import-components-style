@@ -1,1 +1,1 @@
-.yarn/** linguist-detectable=false
+.yarn/**/*.* linguist-detectable=false;
